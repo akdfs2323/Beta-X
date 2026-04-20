@@ -1,6 +1,6 @@
 # 📢 Beta X - ระบบกระดานประกาศ (Announcement Board)
 
-โปรเจคย่อยสำหรับการตั้งต้นระบบหน้าฟีดประกาศ แบบ Full-Stack (NestJS + React + PostgreSQL)
+Full-Stack (NestJS + React + PostgreSQL)
 
 ---
 
