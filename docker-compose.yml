@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: announcement_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: announcement_board
+    ports:
+      - '5432:5432'
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: announcement_api
+    depends_on:
+      - db
+    ports:
+      - '3001:3001'
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: user
+      DB_PASS: password
+      DB_NAME: announcement_board
+    # Wait for DB to be ready before starting app might be needed but TypeORM is resilient
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: announcement_web
+    depends_on:
+      - api
+    ports:
+      - '80:80'
+
+volumes:
+  db_data:
