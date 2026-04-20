@@ -43,6 +43,24 @@
 
 ### 📝 ตัวอย่างการยิง Request
 
+**ตัวอย่างการสมัครสมาชิก / เข้าสู่ระบบ (POST `/api/auth/register` หรือ `/api/auth/login`)**
+```json
+// Headers: Content-Type: application/json
+{
+  "username": "helloworld",
+  "password": "123456"
+}
+```
+
+```json
+// Data Response Message ที่ได้รับกลับมา
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhlbGxvd29ybGQiLCJzdWIiOiJkNGJjNGRkMS0xOWNlLTQzNWEtODM4Zi0yYTE1OGQ5ZDhkNzQiLCJyb2xlIjoidXNlciIsImlhdCI6MTc3NjY1NTA5NCwiZXhwIjoxNzc2NjU4Njk0fQ.Stkg-LYQf78QpUI7YY1Pw6VPhfxRQOIV3APYAOt-QrA",
+    "role": "user",
+    "username": "helloworld"
+}
+```
+
 **ตัวอย่างสร้างประกาศใหม่ (POST `/api/announcements`)**
 ```json
 // Headers ที่ต้องแนบ: Authorization: Bearer <your_jwt_token>
