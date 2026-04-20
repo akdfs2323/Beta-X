@@ -60,32 +60,6 @@
     "username": "helloworld"
 }
 ```
-
-**ตัวอย่างสร้างประกาศใหม่ (POST `/api/announcements`)**
-```json
-// Headers ที่ต้องแนบ: Authorization: Bearer <your_jwt_token>
-{
-  "title": "ยินดีต้อนรับสู่ Beta X!",
-  "body": "นี่คือพื้นที่สื่อสารแห่งใหม่ของเรา สนุกกับการทำงานนะครับ",
-  "pinned": true
-}
-```
-
-**ตัวอย่างข้อมูลกระดานที่ถูกตอบกลับมา (GET `/api/announcements`)**
-```json
-// Data Response Message
-[
-  {
-    "id": "123e4567-e89b-12d3-a456-426614174000",
-    "title": "ยินดีต้อนรับสู่ Beta X!",
-    "body": "นี่คือพื้นที่สื่อสารแห่งใหม่ของเรา สนุกกับการทำงานนะครับ",
-    "author": "Kittikan",
-    "pinned": true,
-    "created_at": "2026-04-20T00:00:00.000Z"
-  }
-]
-```
-
 ---
 
 ## 3. ข้อจำกัดทางสถาปัตยกรรม (Tradeoffs & Assumptions Made)
